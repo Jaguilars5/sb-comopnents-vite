@@ -1,41 +1,68 @@
 {
-  "name": "my-storybook",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "npm run storybook",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@chromatic-com/storybook": "^1.2.18",
-    "@storybook/addon-essentials": "^8.0.0",
-    "@storybook/addon-interactions": "^8.0.0",
-    "@storybook/addon-links": "^8.0.0",
-    "@storybook/addon-onboarding": "^8.0.0",
-    "@storybook/blocks": "^8.0.0",
-    "@storybook/react": "^8.0.0",
-    "@storybook/react-vite": "^8.0.0",
-    "@storybook/test": "^8.0.0",
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "eslint": "^8.55.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "eslint-plugin-storybook": "^0.8.0",
-    "storybook": "^8.0.0",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.8"
-  }
+	"name": "ja-custom-components",
+	"private": false,
+	"version": "0.0.3",
+	"type": "module",
+	"main": "dist/index.js",
+	"typings": "dist/index.d.ts",
+	"keywords": [
+		"react",
+		"dev",
+		"Jefferson",
+		"Aguilar",
+		"curso"
+	],
+	"repository": {
+		"url": "https://Todo...",
+		"type": "git"
+	},
+	"license": "MIT",
+	"files": [
+		"dist/"
+	],
+	"release": {
+		"branches": [
+			"main"
+		]
+	},
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"scripts": {
+		"dev": "npm run storybook",
+		"build": " npm run clean && tsc && npm run copyfiles",
+		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+		"preview": "vite preview",
+		"storybook": "storybook dev -p 6 006",
+		"build-storybook": "storybook build",
+		"chromatic": "npx chromatic --project-token=chpt_b7047a0ce26f1c5",
+		"clean": "rimraf dist/",
+		"copyfiles": "copyfiles -u 1 src/**/*.css dist/"
+	},
+	"devDependencies": {
+		"@chromatic-com/storybook": "^1.2.18",
+		"@storybook/addon-essentials": "^8.0.0",
+		"@storybook/addon-interactions": "^8.0.0",
+		"@storybook/addon-links": "^8.0.0",
+		"@storybook/addon-onboarding": "^8.0.0",
+		"@storybook/blocks": "^8.0.0",
+		"@storybook/react": "^8.0.0",
+		"@storybook/react-vite": "^8.0.0",
+		"@storybook/test": "^8.0.0",
+		"@types/react": "^18.2.43",
+		"@types/react-dom": "^18.2.17",
+		"@typescript-eslint/eslint-plugin": "^6.14.0",
+		"@typescript-eslint/parser": "^6.14.0",
+		"@vitejs/plugin-react-swc": "^3.5.0",
+		"chromatic": "^11.0.8",
+		"eslint": "^8.55.0",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.5",
+		"eslint-plugin-storybook": "^0.8.0",
+		"rimraf": "^5.0.5",
+		"storybook": "^8.0.0",
+		"typescript": "^5.2.2",
+		"vite": "^5.0.8"
+	}
 }
